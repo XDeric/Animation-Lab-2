@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    //MARK: Outlets
     @IBOutlet weak var linearOutlet: UIView!
     @IBOutlet weak var easeInOutlet: UIView!
     @IBOutlet weak var easeOutOutlet: UIView!
@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    //MARK: Top Buttons
     @IBAction func linear(_ sender: Any) {
         UIView.animate(withDuration: 2, delay: 0, options: .curveEaseIn , animations: {
             self.linearOutlet.alpha = 0
@@ -39,6 +41,8 @@ class ViewController: UIViewController {
             self.easeInOutOutlet.transform = CGAffineTransform(translationX: 0, y: 600)
         })
     }
+    
+    //MARK: Reset
     @IBAction func reset(_ sender: Any) {
         UIView.animate(withDuration: 1, animations: {
             self.linearOutlet.transform = CGAffineTransform.identity
@@ -54,6 +58,8 @@ class ViewController: UIViewController {
             self.easeInOutOutlet.transform = CGAffineTransform.identity
         })
     }
+    
+    //MARK: Animate
     @IBAction func animate(_ sender: Any) {
         UIView.animate(withDuration: 2, animations: {
             self.linearOutlet.transform = CGAffineTransform(translationX: 0, y: 600)
